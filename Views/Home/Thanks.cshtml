@@ -1,0 +1,24 @@
+﻿@model Kutse_TSYBIREV.Models.Guest
+
+@{
+    ViewBag.Title = "Tänan";
+}
+<div>
+    <p>Tänan sind, @Model.Name</p>
+</div>
+<div>
+    @if (Model.WillAttend == true)
+    {
+        @:Ootan sin väga!!
+        <br />
+        <img src="~/Images/welcome.png" />
+    }
+    else
+    {
+        @:Väga kurb+
+        <br />
+        <img src="~/Images/bad.png" />
+    }
+</div>
+<h2>Thanks</h2>
+
