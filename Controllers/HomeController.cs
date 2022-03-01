@@ -12,9 +12,19 @@ namespace Kutse_TSYBIREV.Controllers
     {
         public ActionResult Index()
         {
+            string pidu = "";
+            if(DateTime.Now.Month==1)
+            {
+                pidu = "Jaanuari pidu";
+            }
+            ViewBag.Message = "Ootan sind oma peole!" + pidu + "Palun tule kindlasti!";
+
             ViewBag.Message = "Ootan sind oma peole";
             int hour = DateTime.Now.Hour;
-            ViewBag.greeting = hour < 12 ? "Tere Hommikust!" : "Tere päevast";
+            ViewBag.greeting = hour < 12 && hour > 4 ? "Tere Hommikust!" : "Tere päevast";
+            ViewBag.greeting = hour < 16 && hour > 12 ? "Tere Paevast!" : "Tere Õhtust";
+            ViewBag.greeting = hour > 16 && hour < 20 ? "Tere Õhtust!" : "Tere Ööd";
+            ViewBag.greeting = hour > 20 && hour < 4 ? "Tere Ööd!" : "Tere Hommikust";
             return View();
         }
         [HttpGet]

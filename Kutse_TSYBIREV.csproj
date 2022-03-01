@@ -189,8 +189,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\aboi.jpg" />
     <Content Include="Images\bad.png" />
+    <Content Include="Images\karta.png" />
     <Content Include="Images\kutse.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\oboi.jpg" />
+    <Content Include="Images\oboi222.jpg" />
+    <Content Include="Images\sdf.jpg" />
     <Content Include="Images\welcome.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
