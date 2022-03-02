@@ -12,15 +12,20 @@ namespace Kutse_TSYBIREV.Controllers
     {
         public ActionResult Index()
         {
-            string pidu = "";
-            if(DateTime.Now.Month==1)
-            {
-                pidu = "Jaanuari pidu";
-            }
-            ViewBag.Message = "Ootan sind oma peole!" + pidu + "Palun tule kindlasti!";
+            int month = DateTime.Now.Month;
 
-            ViewBag.Message = "Ootan sind oma peole";
+            string[] peod = new string[12] { "Uus aasta", "Isamaa kaitsja päev", "Naistepäev", "Aprillinali", "Võidupüha", "esimene suvepäev", "Ülemaailmne UFO päev", "Arbuusipäev", "Esimene september", "Arstide päev", "November", "Jõulud"};
+            
+            //string pidu = "";
+            //if(DateTime.Now.Month==1)
+            //{
+                //pidu = "Jaanuari pidu";
+            //}
+            ViewBag.Message = "Ootan sind oma peole! " + peod[month-1] + " Palun tule kindlasti!";
+
+            //ViewBag.Message = "Ootan sind oma peole";
             int hour = DateTime.Now.Hour;
+
             ViewBag.greeting = hour < 12 && hour > 4 ? "Tere Hommikust!" : "Tere päevast";
             ViewBag.greeting = hour < 16 && hour > 12 ? "Tere Paevast!" : "Tere Õhtust";
             ViewBag.greeting = hour > 16 && hour < 20 ? "Tere Õhtust!" : "Tere Ööd";
@@ -53,7 +58,7 @@ namespace Kutse_TSYBIREV.Controllers
                 WebMail.SmtpPort = 587;
                 WebMail.EnableSsl = true;
                 WebMail.UserName = "programmeeriminemvc@gmail.com";
-                WebMail.Password = "************";
+                WebMail.Password = "2.kuursus tarpv20";
                 WebMail.From = "programmeeriminemvc@gmail.com";
                 WebMail.Send("maks61ts@gmail.com", "Vastus kutsele", guest.Name + "vastas" + ((guest.WillAttend ?? false) ? "tuleb peole " : "ei tule peole"));
                 ViewBag.Message = "Kiri on saatnud";
