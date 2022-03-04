@@ -8,6 +8,7 @@ namespace Kutse_TSYBIREV.Models
 {
     public class Guest
     {
+        public int Id { get; set; }
         public int Id;
         [Required(ErrorMessage = "Sisesta oma nimi")]
         public string Name { get; set; }
