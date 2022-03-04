@@ -82,5 +82,13 @@ namespace Kutse_TSYBIREV.Controllers
 
             return View();
         }
+
+        GuestContext db = new GuestContext();
+        public ActionResult Guests()
+        {
+            IEnumerable<Guest> guests = db.Guests;
+            return View(guests);
+            //asdasdss
+        }
     }
 }
